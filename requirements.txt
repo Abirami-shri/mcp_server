@@ -1,0 +1,5 @@
+mcp
+snowflake-connector-python
+python-dotenv
+fastapi
+uvicorn
