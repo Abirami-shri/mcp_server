@@ -1,5 +1,5 @@
 from mcp.server.fastmcp import FastMCP
-from snowflake_tools import employee_lookup, department_summary, employee_count, average_salary, employees_by_department, highest_salary_employee, generate_hr_report
+from snowflake_tools import employee_lookup, department_summary, employee_count, average_salary, employees_by_department, highest_salary_employee, generate_hr_report as hr_report
 
 mcp = FastMCP("employee-agentic-assistant-mcp")
 
@@ -51,7 +51,9 @@ def generate_hr_report():
     """
     Generates a comprehensive HR report from Snowflake.
     """
-    return generate_hr_report()
+    return hr_report()
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run(
+        transport="streamable-http"
+    )
